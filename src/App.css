@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+.todobox{
+    display: flex;
+    gap: 10px;
+}
+
+h1{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 35px;
+    color: blue;
+
+
+}
+input{
+    border: 1px solid red;
+    height: 40px;
+    width: 600px;
+    font-size: 25px;
+    border-radius: 10px;
+    margin-top: 10px;
+
+}
+button{
+    padding: 0px 40px 0px 40px;
+    color: red;
+    font-weight: 700;
+    border: 1px solid red;
+    border-radius: 10px;
+}

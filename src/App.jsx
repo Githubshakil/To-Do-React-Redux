@@ -7,7 +7,19 @@ function App() {
 
   return (
     <>
-      <div>hello</div>
+      <div className='container'>
+        <h1>Todo App</h1>
+        <div className='todobox'>
+        <input placeholder='Write your task'/>
+        <button>Add</button>
+        </div>
+        <ul>
+          <li>dfsdf</li>
+          <li>dfsdf</li>
+          <li>dfsdf</li>
+        </ul>
+      </div>
+     
     </>
   )
 }
