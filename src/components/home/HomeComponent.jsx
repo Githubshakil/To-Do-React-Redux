@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addTodo, inputValue } from '../../todo/todoSlice';
+import { addTodo, deleteTodo, editTodo, inputValue, updateTodo } from '../../todo/todoSlice';
 
 const HomeComponent = () => {
   
@@ -21,13 +21,13 @@ const HomeComponent = () => {
                         ?
                         <button onClick={()=>dispatch(addTodo(inValue))}>Add</button>
                         :
-                        <button >Update</button>
+                        <button onClick={()=>dispatch(updateTodo())} >Update</button>
                     }
                 </div>
                 <ul>
                     {
                         data.map((item,index)=>(
-                        <li key={index}>{item} <button onClick={()=>handleEdit(item,index)}>Edit</button> <button onClick={()=>handleDelete(index)}>Delete</button></li>
+                        <li key={index}>{item} <button onClick={()=>dispatch(editTodo(index))}>Edit</button> <button onClick={()=>dispatch(deleteTodo(index))}>Delete</button></li>
                         ))
                     }
                 </ul>

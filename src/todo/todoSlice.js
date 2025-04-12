@@ -4,6 +4,7 @@ const initialState = {
   value: [],
   inValue:"",
   addBtn: true,
+  updateIndex:""
 }
 
 export const todoSlice = createSlice({
@@ -16,12 +17,26 @@ export const todoSlice = createSlice({
     addTodo: (state, action) => {
         state.value.push(action.payload)
         state.inValue = ""
-        console.log(state.value)
     },
+    deleteTodo:(state, action) => {
+        let index = action.payload
+        state.value.splice(index, 1)
+    },
+    editTodo: (state, action) =>{
+        let index = action.payload
+        state.inValue = state.value[index]
+        state.updateIndex = index
+        state.addBtn = false
+    },
+    updateTodo:(state, action) => {
+        state.value[state.updateIndex] = state.inValue;
+        state.addBtn = true
+        state.inValue = ""
+    }
   },
 })
 
-// Action creators are generated for each case reducer function
-export const { inputValue, addTodo } = todoSlice.actions
+
+export const { inputValue, addTodo, deleteTodo, editTodo, updateTodo } = todoSlice.actions
 
 export default todoSlice.reducer
